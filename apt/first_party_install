@@ -61,14 +61,7 @@ linux-cpupower
 
 linux-headers-6.3.0-2-amd64
 linux-headers-6.3.0-2-common
-
-linux-headers-6.4.6-060406
-linux-headers-6.4.6-060406-generic
-linux-image-unsigned-6.4.6-060406-generic
-
 linux-kbuild-6.3
-
-linux-modules-6.4.6-060406-generic
 
 locales
 
@@ -127,5 +120,3 @@ wireplumber
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-desktop-portal-kde
-
-zerotier-one
