@@ -7,4 +7,4 @@ Basic steps:
 2) Switch to Debian Sid
 3) Manual purge of packages
 4) Manual install of Debian packages
-5) Manual install of additional software
+5) Manual install of additional software (Zerotier, Mainline, timeshift-autosnap-apt)
