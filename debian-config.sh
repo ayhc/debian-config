@@ -20,17 +20,29 @@ echo "Modifying repositories and APT preferences..."
 
 rm /etc/apt/sources.list
 cat << EOF >> /etc/apt/sources.list
+# Debian Sid
 deb http://deb.debian.org/debian/ unstable main non-free-firmware non-free contrib
 deb-src http://deb.debian.org/debian/ unstable main non-free-firmware non-free contrib
 
-deb http://deb.debian.org/debian/ testing main non-free-firmware non-free contrib
-deb-src http://deb.debian.org/debian/ testing main non-free-firmware non-free contrib
+# Siduction
+deb     https://mirror.math.princeton.edu/pub/siduction/extra unstable main
+deb-src https://mirror.math.princeton.edu/pub/siduction/extra unstable main
+deb     https://mirror.math.princeton.edu/pub/siduction/fixes unstable main contrib non-free 
+deb-src https://mirror.math.princeton.edu/pub/siduction/fixes unstable main contrib non-free
+
+# Debian Testing
+#deb http://deb.debian.org/debian/ testing main non-free-firmware non-free contrib
+#deb-src http://deb.debian.org/debian/ testing main non-free-firmware non-free contrib
 EOF
 
 cat << EOF >> /etc/apt/preferences
 Package: *
-Pin: release a=unstable
+Pin: release a=siduction
 Pin-Priority: 1000
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 990
 
 Package: *
 Pin: release a=testing
@@ -39,29 +51,6 @@ EOF
 
 apt-get update
 apt-get upgrade
-
-# Manual purge of packages
-
-echo "Removing packages..."
-
-apt-get --yes --force-yes purge \
-   akregator \
-   dragonplayer \
-   firefox-esr \
-   juk \
-   kaddressbook \
-   kdepim \
-   kmail \
-   knotes \
-   konq-plugins \
-   konqueror \
-   korganizer \
-   kwrite \
-   pim-data-exporter \
-   pim-sieve-editor \
-   pulseaudio \
-   pulseaudio-module-gsettings \
-   pulseaudio-module-bluetooth
 
 # Manual install of packages from Debian repos
 
@@ -110,8 +99,8 @@ apt-get --yes --force-yes install \
    libreoffice-plasma \
    libreoffice-qt5 \
    linux-cpupower \
-   linux-headers-6.3.0-2-amd64 \
-   linux-headers-6.3.0-2-common \
+   linux-headers-siduction-amd64 \
+   linux-image-siduction-amd64 \
    linux-kbuild-6.3 \
    locales \
    lsb-release \
@@ -150,6 +139,32 @@ apt-get --yes --force-yes install \
    xdg-desktop-portal \
    xdg-desktop-portal-gtk \
    xdg-desktop-portal-kde \
+
+
+# Manual purge of packages
+
+echo "Removing packages..."
+
+apt-get --yes --force-yes purge \
+   akregator \
+   dragonplayer \
+   firefox-esr \
+   juk \
+   kaddressbook \
+   kdepim \
+   kmail \
+   knotes \
+   konq-plugins \
+   konqueror \
+   korganizer \
+   kwrite \
+   linux-headers-amd64 \
+   linux-image-amd64 \
+   pim-data-exporter \
+   pim-sieve-editor \
+   pulseaudio \
+   pulseaudio-module-gsettings \
+   pulseaudio-module-bluetooth
 
 # Manual install of additional software
 
