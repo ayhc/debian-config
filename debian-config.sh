@@ -55,7 +55,7 @@ EOF
 cat << EOF >> /etc/apt/preferences
 Package: *
 Pin: release a=siduction
-Pin-Priority: 1000
+Pin-Priority: 990
 
 Package: *
 Pin: release a=unstable
