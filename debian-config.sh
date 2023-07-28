@@ -75,6 +75,7 @@ echo "Installing packages from Debian and Siduction repositories..."
 
 apt-get --yes --force-yes install \
    apt-listbugs \
+   aptitude \
    aria2 \
    clamav-daemon \
    clamav-freshclam \
