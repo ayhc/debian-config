@@ -99,7 +99,6 @@ apt-get --yes --force-yes install \
    kde-config-flatpak \
    kde-config-plymouth \
    libavcodec-extra \
-   libavcodec-extra59 \
    libgee-0.8-dev \
    libjson-glib-dev \
    libvte-2.91-dev \
