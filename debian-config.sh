@@ -71,7 +71,7 @@ apt-get upgrade
 
 # Manual install of packages from Debian repos
 
-echo "Installing packages from Debian repositories..."
+echo "Installing packages from Debian and Siduction repositories..."
 
 apt-get --yes --force-yes install \
    apt-listbugs \
