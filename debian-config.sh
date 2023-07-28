@@ -12,27 +12,44 @@ fi
 
 echo "Running as root."
 
+# Install Siduction keyring
+
+echo "Installing Siduction keyring..."
+
+apt update
+apt upgrade
+apt install curl
+curl -O https://packages.siduction.org/extra/pool/main/s/siduction-archive-keyring/siduction-archive-keyring_2021.09.16_all.deb
+dpkg -i ./siduction-archive-keyring_2021.09.16_all.deb
+
 # Edit /etc/apt/sources.list and /etc/apt/preferences
-# Switch to Debian Sid; add Debian Testing repo
-# Update preferences to prefer Sid
+# Switch to Debian Sid; add Siduction and Debian Testing repos
+# Update preferences to prefer Siduction
 
 echo "Modifying repositories and APT preferences..."
 
 rm /etc/apt/sources.list
-cat << EOF >> /etc/apt/sources.list
+
+cat << EOF >> /etc/apt/sources.list.d/debian.list
 # Debian Sid
 deb http://deb.debian.org/debian/ unstable main non-free-firmware non-free contrib
 deb-src http://deb.debian.org/debian/ unstable main non-free-firmware non-free contrib
 
-# Siduction
-deb     https://mirror.math.princeton.edu/pub/siduction/extra unstable main
-deb-src https://mirror.math.princeton.edu/pub/siduction/extra unstable main
-deb     https://mirror.math.princeton.edu/pub/siduction/fixes unstable main contrib non-free 
-deb-src https://mirror.math.princeton.edu/pub/siduction/fixes unstable main contrib non-free
-
 # Debian Testing
 #deb http://deb.debian.org/debian/ testing main non-free-firmware non-free contrib
 #deb-src http://deb.debian.org/debian/ testing main non-free-firmware non-free contrib
+EOF
+
+cat << EOF >> /etc/apt/sources.list.d/extra.list
+# Siduction Extra
+deb     https://mirror.math.princeton.edu/pub/siduction/extra unstable main
+deb-src https://mirror.math.princeton.edu/pub/siduction/extra unstable main
+EOF
+
+cat << EOF >> /etc/apt/sources.list.d/fixes.list
+# Siduction Fixes
+deb     https://mirror.math.princeton.edu/pub/siduction/fixes unstable main contrib non-free 
+deb-src https://mirror.math.princeton.edu/pub/siduction/fixes unstable main contrib non-free
 EOF
 
 cat << EOF >> /etc/apt/preferences
