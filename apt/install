@@ -53,10 +53,8 @@ libvte-2.91-dev
 libreoffice-help-en-gb
 libreoffice-help-en-us
 libreoffice-java-common
-libreoffice-kf5
+libreoffice-gtk3
 libreoffice-l10n-en-gb
-libreoffice-plasma
-libreoffice-qt5
 
 linux-cpupower
 
