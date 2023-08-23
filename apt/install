@@ -58,10 +58,6 @@ libreoffice-l10n-en-gb
 
 linux-cpupower
 
-linux-headers-6.3.0-2-amd64
-linux-headers-6.3.0-2-common
-linux-kbuild-6.3
-
 locales
 
 lsb-release
