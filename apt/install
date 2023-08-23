@@ -58,6 +58,9 @@ libreoffice-l10n-en-gb
 
 linux-cpupower
 
+linux-headers-siduction-amd64
+linux-image-siduction-amd64
+
 locales
 
 lsb-release
