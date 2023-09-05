@@ -112,14 +112,12 @@ apt-get --yes --force-yes install \
    libreoffice-help-en-gb \
    libreoffice-help-en-us \
    libreoffice-java-common \
-   libreoffice-kf5 \
+   libreoffice-gtk3 \
    libreoffice-l10n-en-gb \
    libreoffice-plasma \
-   libreoffice-qt5 \
    linux-cpupower \
    linux-headers-siduction-amd64 \
    linux-image-siduction-amd64 \
-   linux-kbuild-6.3 \
    locales \
    lsb-release \
    make \
@@ -176,8 +174,6 @@ apt-get --yes --force-yes purge \
    konqueror \
    korganizer \
    kwrite \
-   linux-headers-amd64 \
-   linux-image-amd64 \
    pim-data-exporter \
    pim-sieve-editor \
    pulseaudio \
